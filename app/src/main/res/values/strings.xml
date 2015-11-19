@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Receipt Checker</string>
     <string name="action_settings">Settings</string>
+    <string name="my_receipt_button">My Receipts</string>
+    <string name="title_activity_show_receipt">Show Receipt Activity</string>
+    <string name="show_receipt">In Receipt Activity</string>
 </resources>
