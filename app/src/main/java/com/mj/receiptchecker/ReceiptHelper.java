@@ -44,7 +44,7 @@ public class ReceiptHelper extends MySQLiteHelper {
         // create ContentValues to add key "column"/value
         ContentValues values = new ContentValues();
         values.put(RECEIPT_ID, receipt.id);
-        values.put(DATE, receipt.date.getMillis());
+        values.put(DATE, receipt.date.getMillis() / 1000);
         values.put(MATCH_LEVEL,receipt.matchLevel);
 
         // insert

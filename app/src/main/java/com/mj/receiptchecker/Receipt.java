@@ -22,7 +22,7 @@ public class Receipt {
 
     public Receipt(String id, int date, int matchLevel) {
         this.id = id;
-        this.date = new DateTime(date);
+        this.date = new DateTime(date * 1000l);
         this.matchLevel = matchLevel;
     }
 

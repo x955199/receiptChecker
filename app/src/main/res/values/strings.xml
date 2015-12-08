@@ -5,5 +5,6 @@
     <string name="show_receipt">My Receipts</string>
     <string name="delete_receipt_button">Delete Receipts</string>
     <string name="save_receipt">Save</string>
+    <string name="save_toast">Saved!</string>
     <string name="receipt_number">receipt number</string>
 </resources>
