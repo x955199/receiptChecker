@@ -11,4 +11,6 @@ public class MonthlyWinningReceipts {
     int month;
     HashMap<String, Receipt> map;
 
+
+    // todo: matching function
 }

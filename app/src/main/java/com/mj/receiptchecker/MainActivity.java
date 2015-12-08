@@ -9,8 +9,12 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.AdapterView;
 import android.widget.EditText;
+import android.widget.GridView;
 import android.widget.Toast;
+
+import com.mj.receiptchecker.adapters.GridViewAdapter;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -25,6 +29,21 @@ public class MainActivity extends AppCompatActivity {
         // set display date to today
         EditText tv = (EditText) findViewById(R.id.receipt_date);
         DateHelper.setDate(tv);
+
+        // set up grid
+        final String[] strs = new String[]{
+                "My Receipts", "Feeling Lucky", "Lucky Numbers", "Quick Scan"
+        };
+        GridView gv = (GridView) findViewById(R.id.main_grid_view);
+        gv.setAdapter(new GridViewAdapter(this, strs));
+
+        gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                if(strs[position] == "My Receipts") {
+                    showReceipts(v);
+                }
+            }
+        });
     }
 
     @Override

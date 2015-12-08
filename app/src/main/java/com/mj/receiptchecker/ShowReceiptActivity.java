@@ -6,6 +6,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ListView;
 
+import com.mj.receiptchecker.adapters.ReceiptAdapter;
+
 import java.util.List;
 
 public class ShowReceiptActivity extends AppCompatActivity {

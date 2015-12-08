@@ -9,9 +9,9 @@ import org.joda.time.format.DateTimeFormatter;
  */
 public class Receipt {
 
-    String id;
-    DateTime date;
-    int matchLevel;
+    public String id;
+    public DateTime date;
+    public int matchLevel;
 
     public Receipt(String id, String date) {
         DateTimeFormatter formatter = DateTimeFormat.forPattern("MM/dd/yyyy");

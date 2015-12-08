@@ -1,4 +1,4 @@
-package com.mj.receiptchecker;
+package com.mj.receiptchecker.adapters;
 
 import android.content.Context;
 import android.graphics.Color;
@@ -7,6 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+
+import com.mj.receiptchecker.R;
+import com.mj.receiptchecker.Receipt;
+
 import java.util.List;
 
 /**
@@ -42,7 +46,7 @@ public class ReceiptAdapter extends ArrayAdapter<Receipt> {
         // Populate the data into the template view using the data object
         if(receipt.matchLevel > 0) {
             viewHolder.id.setTextColor(Color.GREEN);
-        } else {
+        } else if (receipt.matchLevel == 0) {
             viewHolder.id.setTextColor(Color.RED);
         }
         viewHolder.id.setText(receipt.id);

@@ -84,6 +84,8 @@ public class ReceiptHelper extends MySQLiteHelper {
 
     }
 
+    // todo: function to get receipt by year/month
+
     // Deleting all receipts
     public void deleteAllReceipts() {
         SQLiteDatabase db = this.getWritableDatabase();
