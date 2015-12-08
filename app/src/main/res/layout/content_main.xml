@@ -9,6 +9,27 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main" tools:context=".MainActivity">
 
-    <TextView android:text="Hello World!" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <EditText
+        android:id="@+id/receipt_number"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/receipt_number"
+        android:inputType="" />
+
+    <EditText
+        android:id="@+id/receipt_date"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/receipt_number"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="showDatePicker"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/save_receipt"
+        android:onClick="saveReceipt"
+        android:layout_below="@+id/receipt_date" />
+
 </RelativeLayout>

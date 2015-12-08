@@ -4,11 +4,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,14 +22,9 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        // set display date to today
+        EditText tv = (EditText) findViewById(R.id.receipt_date);
+        DateHelper.setDate(tv);
     }
 
     @Override
@@ -51,11 +49,31 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void showReceipt(View view) {
+    public void showReceipts(View view) {
         Intent intent = new Intent(this, ShowReceiptActivity.class);
         startActivity(intent);
     }
+
+    public void saveReceipt(View view) {
+        String receiptId = ((EditText) findViewById(R.id.receipt_number)).getText().toString();
+        String receiptDate = ((EditText) findViewById(R.id.receipt_date)).getText().toString();
+
+        // todo: better validation
+        if(!receiptId.isEmpty() && !receiptDate.isEmpty()) {
+            Receipt receipt = new Receipt(receiptId, receiptDate);
+            ReceiptHelper receiptHelper = new ReceiptHelper(this);
+            receiptHelper.addReceipt(receipt);
+        }
+    }
+
+    public void showDatePicker(View view) {
+        DialogFragment newFragment = new DatePickerFragment();
+        newFragment.show(getSupportFragmentManager(), "datePicker");
+    }
+
 }
+
+
 
 
 

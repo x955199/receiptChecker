@@ -20,7 +20,7 @@
         </activity>
         <activity
             android:name=".ShowReceiptActivity"
-            android:label="@string/title_activity_show_receipt"
+            android:label="@string/show_receipt"
             android:theme="@style/AppTheme.NoActionBar"
             android:parentActivityName=".MainActivity">
         </activity>
